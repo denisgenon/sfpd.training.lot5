@@ -33,6 +33,10 @@ public class OrderDetail {
 		this.quantity = quantity;
 	}
 
+	public OrderDetail() {
+
+	}
+
 	public Integer getId() {
 		return id;
 	}

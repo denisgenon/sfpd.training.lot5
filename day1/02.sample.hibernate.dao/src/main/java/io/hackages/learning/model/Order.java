@@ -37,9 +37,10 @@ public class Order {
 	private Invoice invoice;
 
 
-	public Order(Client client, ArrayList<Product> products, LocalDate purchaseDate) {
+	public Order(Client client, List<OrderDetail> orderDetail, LocalDate purchaseDate) {
 		this.client = client;
 		this.purchaseDate = purchaseDate;
+		this.orderDetail = orderDetail;
 	}
 
 	public Client getClient() {

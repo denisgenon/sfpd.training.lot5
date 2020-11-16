@@ -28,6 +28,10 @@ public class Client {
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders;
 
+	public Client() {
+
+	}
+
 	public Client(String alias, String email) {
 		this.alias = alias;
 		this.email = email;
