@@ -18,8 +18,10 @@
     <modules>
         <module>00.sample.hibernate.dao</module>
         <module>00.sample.hibernate.jpa</module>
-        <module>00.sample.hibernate.starter</module>
-    </modules>
+		<module>00.sample.hibernate.starter</module>
+		<module>01.sample.hibernate.dao</module>
+		<module>02.sample.hibernate.dao</module>
+	</modules>
 
     <dependencies>
         <dependency>
