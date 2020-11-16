@@ -1,13 +1,14 @@
 package io.hackages.learning;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
@@ -15,8 +16,6 @@ import io.hackages.learning.dao.ClientDao;
 import io.hackages.learning.dao.ProductDao;
 import io.hackages.learning.model.Category;
 import io.hackages.learning.model.Client;
-import io.hackages.learning.model.Order;
-import io.hackages.learning.model.OrderDetail;
 import io.hackages.learning.model.Product;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -37,7 +36,7 @@ public class DummyServiceTopicTest {
 	}
 
 	@Test
-	@org.junit.jupiter.api.Order(1)
+	@Order(1)
 	public void testInitializeDB() {
 		System.out.println("Running testCreate...");
 
@@ -63,27 +62,10 @@ public class DummyServiceTopicTest {
 
 		Assertions.assertTrue(idClient1 > 0);
 		Assertions.assertTrue(idClient2 > 0);
-
-		ArrayList<Product> products1 = new ArrayList<>();
-		products1.add(productBird);
-		products1.add(productCat);
-
-		List<OrderDetail> orderDetails = new ArrayList<>();
-		Order order1 = new Order(client1,
-								 orderDetails,
-								 LocalDate.now());
-		orderDetails.add(new OrderDetail(order1, productBird, 2));
-
-		/*
-		Order order1 = new Order(client1,
-								 products1,
-								 LocalDate.now());
-		*/
-
 	}
 
 	@Test
-	@org.junit.jupiter.api.Order(2)
+	@Order(2)
 	public void testList() {
 		System.out.println("Running testList...");
 

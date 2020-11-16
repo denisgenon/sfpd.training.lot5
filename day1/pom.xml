@@ -21,8 +21,7 @@
 		<module>00.sample.hibernate.starter</module>
 		<module>01.sample.hibernate.dao</module>
 		<module>02.sample.hibernate.dao</module>
-        <module>day1.hibernate.workshop</module>
-    </modules>
+	</modules>
 
     <dependencies>
         <dependency>

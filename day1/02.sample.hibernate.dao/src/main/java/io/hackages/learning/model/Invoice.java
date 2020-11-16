@@ -30,10 +30,6 @@ public class Invoice {
 		this.order = order;
 	}
 
-	public Invoice() {
-
-	}
-
 	public Integer getId() {
 		return id;
 	}

@@ -1,5 +1,6 @@
 package io.hackages.learning.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -26,10 +27,6 @@ public class Client {
 
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders;
-
-	public Client() {
-
-	}
 
 	public Client(String alias, String email) {
 		this.alias = alias;
