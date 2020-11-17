@@ -43,6 +43,10 @@ public class Order {
 		this.orderDetail = orderDetail;
 	}
 
+	public Order() {
+
+	}
+
 	public Client getClient() {
 		return client;
 	}
