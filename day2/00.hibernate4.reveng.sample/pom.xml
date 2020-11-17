@@ -18,6 +18,11 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>4.3.5.Final</version>
         </dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.2.12.Final</version>
+		</dependency>
     </dependencies>
 
     <build>
@@ -34,11 +39,11 @@
                             <!-- jdbcconfiguration means that we are going to reverse engineer an already existing database. -->
                             <implementation>jdbcconfiguration</implementation>
                             <!-- Base folder structure of where the entities will be generated -->
-                            <outputDirectory>target/generatedSources</outputDirectory>
+                            <outputDirectory>src/generated/generatedSources</outputDirectory>
                         </component>
                     </components>
                     <componentProperties>
-                        <revengfile>src/main/resources/reveng.xml</revengfile>
+                        <revengfile>src/main/resources/reverse-engineering-config.xml</revengfile>
                         <propertyfile>src/main/resources/hibernate.properties</propertyfile>
                         <packagename>io.hackages.learning.entity</packagename>
                         <ejb3>true</ejb3>
