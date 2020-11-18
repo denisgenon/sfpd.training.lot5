@@ -17,7 +17,7 @@
 
     <modules>
         <module>00.jaxb.marshall.xsd.sample</module>
-        <module>0.jaxws.client.sample</module>
+        <module>00.jaxws.client.sample</module>
     </modules>
     
 </project>
