@@ -43,8 +43,7 @@ Here is the subject
 * Test a service that handles clients orders
 * Test a service that verifies the content of generated invoices, use Criteria
     * Article on [JPA Criteria](https://www.baeldung.com/hibernate-criteria-queries)
-* After adding more dummy data, Test a service that evaluates the most purchased product
-    
+* After adding more dummy data, Test a service that evaluates the most purchased product    
 
 ### Bonus : Interoperability
 * Switch to a PostGreSQL or Maria DB on Docker instead of H2 
