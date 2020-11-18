@@ -17,20 +17,19 @@ public class OrderDetail {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@ManyToOne()
-	@JoinColumn(name = "order_id", referencedColumnName = "id")
-	private Order order;
-
 	@OneToOne
 	private Product product;
 
 	@Column
 	private Integer quantity;
 
-	public OrderDetail(Order order, Product product, Integer quantity) {
-		this.order = order;
+	public OrderDetail(Product product, Integer quantity) {
 		this.product = product;
 		this.quantity = quantity;
+	}
+
+	public OrderDetail() {
+
 	}
 
 	public Integer getId() {
@@ -39,14 +38,6 @@ public class OrderDetail {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
-		this.order = order;
 	}
 
 	public Product getProduct() {

@@ -2,11 +2,14 @@ package io.hackages.learning.model;
 
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "customers")
+@XmlRootElement
 public class Customer {
 
     @Id

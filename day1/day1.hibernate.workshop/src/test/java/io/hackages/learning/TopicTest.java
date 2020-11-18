@@ -1,19 +1,34 @@
 package io.hackages.learning;
 
-import io.hackages.learning.dao.CustomerDao;
-import io.hackages.learning.dao.CustomerOrderDao;
-import io.hackages.learning.dao.ProductDao;
-import io.hackages.learning.model.*;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.platform.commons.util.CollectionUtils;
-
-import java.util.Collections;
+import java.io.File;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+
+import io.hackages.learning.dao.CustomerDao;
+import io.hackages.learning.dao.CustomerOrderDao;
+import io.hackages.learning.dao.ProductDao;
+import io.hackages.learning.model.Customer;
+import io.hackages.learning.model.CustomerOrder;
+import io.hackages.learning.model.CustomerOrderDTO;
+import io.hackages.learning.model.OrderDetail;
+import io.hackages.learning.model.Product;
+import io.hackages.learning.model.ProductCategory;
 
 @TestMethodOrder(OrderAnnotation.class)
 public class TopicTest {
@@ -106,6 +121,23 @@ public class TopicTest {
 
 		UUID uuid = UUID.fromString(customerOrder1.getInvoiceId());
 		Assertions.assertTrue(Objects.nonNull(uuid));
+	}
+
+	@Test
+	public void unmarshallingTest() {
+		List<CustomerOrder> customerOrders = customerOrderDao.getCustomerOrders();
+		for (CustomerOrder customerOrder : customerOrders) {
+			try {
+				JAXBContext context = JAXBContext.newInstance(CustomerOrderDTO.class);
+				Marshaller marshaller = context.createMarshaller();
+				marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+				CustomerOrderDTO customerOrderDTO = new CustomerOrderDTO(customerOrder);
+				marshaller.marshal(customerOrderDTO, new File(customerOrderDTO.getInvoiceId() + ".xml"));
+
+			} catch (JAXBException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 }

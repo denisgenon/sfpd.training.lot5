@@ -1,6 +1,8 @@
 package io.hackages.learning.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "orders")
+@XmlRootElement
 public class CustomerOrder {
 
     @Id
@@ -93,4 +96,5 @@ public class CustomerOrder {
     public void setPurchasedAt(LocalDateTime purchasedAt) {
         this.purchasedAt = purchasedAt;
     }
+
 }
