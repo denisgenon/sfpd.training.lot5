@@ -82,7 +82,7 @@
 
                                 <java classname="com.sun.tools.xjc.XJCFacade"
                                       classpath="${plugin_classpath}">
-                                    <arg line="src/main/resources/ws"/>
+                                    <arg line="src/main/resources/xsd"/>
                                     <arg line="-d ${project.build.directory}/generated-sources/ws"/>
                                     <arg line="-encoding ${project.build.sourceEncoding}"/>
                                     <arg line="-target 2.0"/>
