@@ -19,6 +19,7 @@
         <module>00.jaxb.marshall.xsd.sample</module>
         <module>00.jaxws.client.sample</module>
         <module>jaxb.unmarshall</module>
+        <module>my.jax.ws</module>
 	</modules>
     
 </project>

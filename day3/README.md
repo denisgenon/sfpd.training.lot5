@@ -55,7 +55,7 @@ public class SampleServicePublisher {
 
 import jakarta.jws.WebService;
 
-@WebService(endpointInterface = "io.hackages.learning.soap.ws.server.SampleService")
+@WebService(endpointInterface = "io.hackages.learning.soap.ws.server.ProductService")
 public class SampleServiceImpl implements SampleService {
 
     @Override
