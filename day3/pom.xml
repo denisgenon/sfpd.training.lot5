@@ -14,5 +14,10 @@
         <artifactId>sfpd.training.lot5</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+
+    <modules>
+        <module>00.jaxb.marshall.xsd.sample</module>
+        <module>0.jaxws.client.sample</module>
+    </modules>
     
 </project>
